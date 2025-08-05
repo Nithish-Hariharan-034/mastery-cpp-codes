@@ -1,0 +1,257 @@
+/*Write a C program to find their power of number using recursion. 
+
+
+Constraints:
+NA
+
+
+Example:
+SAMPLE INPUT:
+5
+2
+
+ 
+ 
+ 
+SAMPLE OUTPUT:
+25
+
+#include<iostream>
+using namespace std;
+
+int fact(int num,int p)
+{
+     if(p<=0)
+     {
+       return 1;
+     }
+     else
+     {
+        p--;
+        return num*fact(num,p);
+     }
+}
+
+int main()
+{
+   int a,b;
+   cin>>a>>b;
+   cout<<fact(a,b);
+}
+//_____________________________________________________________________________
+Write a program to reverse a string using recursion.
+
+
+Constraints:
+NA
+
+
+Example:
+SAMPLE INPUT:
+abdulkalam
+
+ 
+SAMPLE OUTPUT:
+malakludba
+#include<iostream>
+#include<string>
+using namespace std;
+void rev(string &a,int s,int e)
+{
+     if(s>=e)
+     {
+         return; 
+     }
+           char x=a[s];
+           a[s]=a[e];
+           a[e]=x;
+           
+     return rev(a,s+1,e-1);
+}
+
+int main()
+{
+    string x;
+    cin>>x;
+    int a,b;
+    a=0;
+    b=x.length()-1;
+    rev(x,a,b);
+    cout<<x;
+}
+//_____________________________________________________________________________
+
+Write a program to find the largest element of an array using recursion.
+
+
+Constraints:
+NA
+
+
+Example:
+SAMPLE INPUT:
+5
+1
+2
+3
+65
+4
+
+ 
+SAMPLE OUTPUT:
+65
+
+#include<iostream>
+using namespace std;
+int m(int a[],int n)
+{
+    int ma;
+      if(n==0)
+      {
+          return a[0];
+      }
+     ma=m(a,n-1);
+     if(a[n]>ma)
+     {
+         return a[n];
+     }
+     else
+     {
+          return ma;
+     }
+}
+int main()
+{
+     int n,h;
+     cin>>n;
+     int a[n];
+     for(int i=0;i<n;i++)
+     {
+         cin>>a[i];
+     }
+     n=n-1;
+     h=m(a,n);
+     cout<<h;
+}
+
+//_____________________________________________________________________________
+Write a program to find the sun of array elements using recursion.
+
+
+Constraints:
+NA
+
+
+Example:
+SAMPLE INPUT:
+5
+1
+2
+3
+4
+5
+
+ 
+SAMPLE OUTPUT:
+15
+
+#include<iostream>
+using namespace std;
+int s(int a[],int n)
+{
+    int x;
+     if(n==0)
+     {
+         return a[0];
+     }
+     if(n>=0){
+     x=a[n]+s(a,n-1);}
+     
+     return x;
+}
+
+int main()
+{
+     int n,h;
+     cin>>n;
+     int a[n];
+     for(int i=0;i<n;i++)
+     {
+         cin>>a[i];
+     }
+     n=n-1;
+     h=s(a,n);
+     cout<<h;
+}
+
+//_________________________________________________________________
+Write a program to perform the binary search on an array using recursion.
+
+
+Constraints:
+NA
+
+
+Example:
+SAMPLE INPUT:
+5
+1
+2
+3
+4
+5
+5
+
+ 
+SAMPLE OUTPUT:
+5
+
+#include<iostream>
+using namespace std;
+int bs(int a[],int l,int h,int s)
+{
+   int m=l+(h-l)/2;
+   while(l<=h)
+   {
+        if(s==a[m])
+        {
+            return m;
+        }
+        else
+        {
+             if(s>a[m])
+             {
+                 return bs(a,m+1,h,s);
+             }
+             else
+             {
+                if(s<a[m])
+                {
+                    return bs(a,l,m-1,s);
+                }
+             }
+        }
+   }
+   return -1;
+}
+int main()
+{
+     int n,h,s;
+     cin>>n;
+     int a[n];
+     for(int i=0;i<n;i++)
+     {
+         cin>>a[i];
+     }
+     cin>>s;
+     h=bs(a,0,n-1,s);
+     if(h!=-1)
+     {
+         cout<<"The number is present at index "<<h;
+     }
+     else
+     {
+         cout<<"The number is not present in the list";
+     }
+}*/
+//____________________________________________________________________________________---
